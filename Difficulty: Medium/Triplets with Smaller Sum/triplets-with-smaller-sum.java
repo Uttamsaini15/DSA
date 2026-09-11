@@ -18,3 +18,6 @@ class Solution {
         return count;
     }
 }
+
+//When tripleSum < sum, all triplets (i, left, right') for right' ∈ [left+1, right] are valid too 
+//(since the array is sorted) — so add right - left to count (not just 1) before doing left++.
