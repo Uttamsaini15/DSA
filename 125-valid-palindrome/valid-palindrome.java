@@ -4,7 +4,9 @@ class Solution {
         int left=0, right=s.length()-1;
         boolean palindrome = true;
         while(left<right){
-            if(s.charAt(left)!=s.charAt(right)) palindrome=false;
+            if(s.charAt(left)!=s.charAt(right)){
+                return false;
+            }    
             left++;
             right--;
         }
