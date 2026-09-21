@@ -13,13 +13,12 @@ class Solution {
         //chechking for the t charcter present in map or not
         for (int i = 0; i < t.length(); i++) {
             char ch = t.charAt(i);
-            if(map.get(ch)!=null){
-                if(map.get(ch)==1) map.remove(ch);
-                else map.put(ch, map.get(ch)-1);
+            if(!map.containsKey(ch) || map.get(ch)==0 ){
+                return false;
             }
-            else return false;
+            map.put(ch, map.get(ch)-1);
         }
 
-        return map.isEmpty();
+        return true;
     }
 }
