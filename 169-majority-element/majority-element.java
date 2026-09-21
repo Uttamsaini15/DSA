@@ -4,8 +4,9 @@ class Solution {
         int majority=0;
 
         for(int n: arr){
-           if(majority == 0)  res=n;
-           majority += n == res?1:-1;
+            if(majority == 0)  res=n;
+            if(n==res) majority++;
+            else majority--;
         }
         return res;
     }
