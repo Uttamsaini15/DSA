@@ -5,7 +5,7 @@ class Solution {
         for(int h=0; h<nums.length; h++){
             if(nums[h]==0) zeroCount++;
 
-            if(zeroCount>k){
+            while(zeroCount>k){
                 if(nums[l]==0) zeroCount--;
                 l++;
             }
