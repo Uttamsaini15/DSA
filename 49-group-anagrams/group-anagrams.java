@@ -3,15 +3,20 @@ class Solution {
         Map<String, List<String>> map = new HashMap<>();
 
         for(String word: strs){
-            char[] chars=word.toCharArray();
-            Arrays.sort(chars);
-            String sortedWord = new String(chars);
+            int[] count = new int[26];
 
-            if(!map.containsKey(sortedWord)){
-                map.put(sortedWord, new ArrayList<>());
+            //count frequnecy of each Letter in the string
+            for(char c: word.toCharArray()) count[c-'a']++;
+
+            StringBuilder sb = new StringBuilder();
+            for(int num: count){
+                sb.append(num).append('#');  //# makes the key unambiguous
             }
-
-            map.get(sortedWord).add(word);
+            String key=sb.toString();
+            if(!map.containsKey(key)){
+                map.put(key, new ArrayList<>());
+            }
+            map.get(key).add(word);
         }
 
         return new ArrayList<>(map.values());
